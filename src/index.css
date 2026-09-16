@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-headline {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+  background-color: #0e100e;
+  color: #dae6d0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-panel {
+  backdrop-filter: blur(24px);
+  background: rgba(22, 25, 22, 0.4);
+  border: 1px solid rgba(133, 150, 124, 0.15);
+}
+
+.terminal-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #baccb0;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.timeline-line {
+  background: linear-gradient(180deg, transparent 0%, rgba(133, 150, 124, 0.2) 20%, rgba(133, 150, 124, 0.2) 80%, transparent 100%);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #baccb0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
